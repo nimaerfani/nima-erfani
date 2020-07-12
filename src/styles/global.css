@@ -6,6 +6,14 @@
   --light-slate-gray: #969698;
 }
 
+#navbar {
+  height: 6rem;
+  background-color: var(--dark-slate-gray);
+  color: var(--light-steel-blue);
+  display: flex;
+  align-items: center;
+}
+
 .navButton {
   color: var(--dark-slate-gray);
   border: thin solid var(--dark-slate-gray);

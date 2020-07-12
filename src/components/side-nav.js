@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import NavItem from "./navItem"
 import { Button } from "react-bootstrap"
 
-class Nav extends React.Component {
+class SideNav extends React.Component {
   state = {
     navVisible: true,
   }
@@ -68,4 +68,4 @@ class Nav extends React.Component {
   }
 }
 
-export default Nav
+export default SideNav
