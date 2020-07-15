@@ -1,36 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const Experience = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      imgStemcell: file(relativePath: { eq: "stemcell.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-          original {
-            height
-            width
-          }
-        }
-      }
-
-      imgFraser: file(relativePath: { eq: "fraser3.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-          original {
-            height
-            width
-          }
-        }
-      }
-    }
-  `)
   return (
     <Container>
       <h5>Experience</h5>
@@ -39,12 +10,6 @@ const Experience = () => {
           <div className="d-inline-block">
             <h6>Software Developer Co-op - Stemcell Technologies</h6>
             <p>From: Sep. 2017 – Apr. 2018</p>
-          </div>
-          <div
-            className="d-inline-block"
-            style={{ width: "30%", float: "right" }}
-          >
-            <Img fluid={data.imgStemcell.childImageSharp.fluid} />
           </div>
           <p>
             During my time at Stemcell, I worked with the development team to
@@ -59,13 +24,6 @@ const Experience = () => {
             <h6>Business Systems Analyst - Fraser Health Authority</h6>
             <p>From: Sep. 2018 – Dec. 2018</p>
           </div>
-          <div
-            className="d-inline-block"
-            style={{ width: "30%", float: "right" }}
-          >
-            <Img fluid={data.imgFraser.childImageSharp.fluid} />
-          </div>
-
           <p>
             My duties all stemmed from the day to day operations of
             Intrahealth's Profile aEMR (ambulatory Electronic Medical Records)

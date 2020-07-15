@@ -39,7 +39,19 @@ const Projects = () => {
             Created an classic style calculator (calculator) using plan JS and
             HTML/CSS using recursion
           </div>
-          <div>My other school projects including ....</div>
+          <div>
+            I have done many group projects for my courses including:
+            <ul>
+              <li>
+                Creating a real-time operating system using C for a roomba robot
+                as part of a two-person group
+              </li>
+              <li>
+                Creating a python application for day-trading as part of a group
+                of three.
+              </li>
+            </ul>
+          </div>
         </Col>
       </Row>
     </Container>
