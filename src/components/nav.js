@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import NavItem from "./navItem"
 import { Button } from "react-bootstrap"
 
@@ -17,7 +17,7 @@ class Nav extends React.Component {
     const navItems = [
       "Intro",
       "Education",
-      "Skills",
+      "Technical Profile",
       "Experience",
       "Projects",
     ].map((value, index) => <NavItem>{value}</NavItem>)
@@ -26,23 +26,25 @@ class Nav extends React.Component {
         style={{
           position: "fixed",
           zIndex: "100",
-          right: ".5rem",
-          top: "8rem",
+          right: "2rem",
+          top: "2rem",
           textAlign: "center",
           width: "fit-content",
         }}
       >
-        <div className="d-none d-md-block">{navItems}</div>
-        <div className="d-xs-block d-md-none text-right">
-          <Button
-            onClick={this.setNavVisible}
-            variant="outline"
-            style={{
-              display: this.state.navVisible ? "none" : "inline-block",
-            }}
-          >
-            <i className="fas fa-chevron-right"></i>
-          </Button>
+        <div className="d-none d-lg-block">{navItems}</div>
+        <div className="d-xs-block d-lg-none text-right">
+          <div>
+            <Button
+              onClick={this.setNavVisible}
+              variant="outline"
+              style={{
+                display: this.state.navVisible ? "none" : "inline-block",
+              }}
+            >
+              <i class="far fa-window-close"></i>
+            </Button>
+          </div>
           <div
             style={{
               display: this.state.navVisible ? "none" : "block",
@@ -59,7 +61,7 @@ class Nav extends React.Component {
                 display: this.state.navVisible ? "block" : "none",
               }}
             >
-              <i className="fas fa-chevron-left"></i>
+              <i class="fas fa-bars"></i>
             </Button>
           </div>
         </div>

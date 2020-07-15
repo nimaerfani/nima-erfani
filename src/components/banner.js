@@ -27,9 +27,9 @@ const Banner = () => {
       }}
     >
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-      <div style={{ position: "absolute", top: "5%", right: "5%" }}>
+      {/* <div style={{ position: "absolute", top: "5%", right: "5%" }}>
         <input type="button" value="Contact Me" className="navButton" />
-      </div>
+      </div> */}
       <div
         style={{
           position: "absolute",

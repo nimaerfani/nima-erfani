@@ -10,7 +10,8 @@ const NavItem = ({ children }) => {
         border: "thin solid black",
         borderRadius: "2",
         opacity: "0.8",
-        backgroundColor: "var(--light-steel-blue)",
+        backgroundColor: "var(--dark-slate-gray)",
+        color: "whitesmoke",
       }}
     >
       {children}
