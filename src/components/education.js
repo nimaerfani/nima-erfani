@@ -4,22 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Education = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "uvic.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-          original {
-            height
-            width
-          }
-        }
-      }
-    }
-  `)
-
   const courses = [
     "Software development methods",
     "Computer architecture",
@@ -32,40 +16,38 @@ const Education = () => {
     "Database systems",
     "Security engineering",
     "Design and analysis of real-time systems",
-    "Requirements engineering",
+    "Software testing",
     "Embedded systems",
     "Software systems scalability",
   ]
 
   return (
     <Container>
-      <h5>Education</h5>
-      <Row>
-        <Col lg={4}>
-          <div style={{ maxWidth: "50%" }}>
-            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-          </div>
-          <p>
-            I graduated from the University of Victoria Summer of 2020. <br />
-            -Was first admitted into uvic engineering program <br />
-            -was introducted to programming with C <br />
-            -Then began working with higher level languages like javascript and
-            python
-            <br />
-            -I like doing web development so I stuck with web development.{" "}
-            <br />
-            -My first co-op was a job developing a shipping application to be
-            used for shipping items with fedEx.
-            <br />
-            -since then I've been learning about web development on my own.
-            Front end and back end
-            <br />
-            Tools I've learned: React, Bootstrap, Gatsby, Firebase...
+      <Row className="d-flex align-items-lg-center">
+        <Col xs={12} lg={5}>
+          <h4>Education</h4>
+          <b>Bachelor of Software Engineering</b>
+          <br />
+          <b>University of Victoria, Grad. 2020</b>
+          <p className="text-justify">
+            I graduated UVic in summer of 2020 with a Bachelor of Software
+            Engineering degree. Throughout my time at Uvic, I've had a broad
+            range of experiences in software, working with different languages,
+            systems, tools and people. I used low level languages like C, and
+            high level languages like Python. I learned about different tools
+            used by developers in the real world, like Git. Most importantly, I
+            got to experience software in the real world while on co-op. At
+            Stemcell I had the chace to experience every step of the software
+            development lifecycle in developing their department's shipping
+            application. In contrast, I experienced the operations side of an
+            advanced software system in my role at Fraser Health where I was
+            supporting an Electronic Medical Records system. Excited to see
+            where this journey leads!
           </p>
         </Col>
-        <Col xs={12} lg={6}>
-          <h6>Courses</h6>
-          <ul style={{ columns: 2, columnGap: "10%" }}>
+        <Col xs={12} lg={5}>
+          <b>Courses I've completed...</b>
+          <ul>
             {courses.map((value, index) => {
               return <li>{value}</li>
             })}

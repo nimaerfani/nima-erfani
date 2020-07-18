@@ -15,7 +15,6 @@ class Nav extends React.Component {
 
   render() {
     const navItems = [
-      "Intro",
       "Education",
       "Technical Profile",
       "Experience",
@@ -30,6 +29,7 @@ class Nav extends React.Component {
           top: "2rem",
           textAlign: "center",
           width: "fit-content",
+          padding: "0",
         }}
       >
         <div className="d-none d-lg-block">{navItems}</div>
@@ -42,7 +42,7 @@ class Nav extends React.Component {
                 display: this.state.navVisible ? "none" : "inline-block",
               }}
             >
-              <i class="far fa-window-close"></i>
+              <i className="far fa-window-close"></i>
             </Button>
           </div>
           <div
@@ -61,7 +61,7 @@ class Nav extends React.Component {
                 display: this.state.navVisible ? "block" : "none",
               }}
             >
-              <i class="fas fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </Button>
           </div>
         </div>

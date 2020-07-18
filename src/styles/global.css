@@ -6,6 +6,10 @@
   --light-slate-gray: #969698;
 }
 
+#___gatsby > div > div {
+  padding: 2rem;
+}
+
 /* 
 .navButton:focus {
   outline: none;

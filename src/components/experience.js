@@ -4,32 +4,40 @@ import { Container, Row, Col } from "react-bootstrap"
 const Experience = () => {
   return (
     <Container>
-      <h5>Experience</h5>
-      <Row>
+      <h4>Experience</h4>
+      <Row className="text-justify">
         <Col xs={12} lg={5}>
-          <div className="d-inline-block">
-            <h6>Software Developer Co-op - Stemcell Technologies</h6>
+          <header className="d-inline-block mt-2">
+            <h6>
+              Software Developer Co-op
+              <br />
+              Stemcell Technologies
+            </h6>
             <p>From: Sep. 2017 – Apr. 2018</p>
-          </div>
+          </header>
           <p>
             During my time at Stemcell, I worked with the development team to
             create a web application used by the shipping department to place
             shipping orders with FedEx through FedEx web services. This project
             was challenging yet rewarding, and I am thankful for having had the
-            chance to complete it.
+            chance to complete it. Please see <b>HERE</b> for project details.
           </p>
         </Col>
         <Col xs={12} lg={5}>
-          <div className="d-inline-block">
-            <h6>Business Systems Analyst - Fraser Health Authority</h6>
+          <header className="d-inline-block mt-2">
+            <h6>
+              Business Systems Analyst
+              <br />
+              Fraser Health Authority
+            </h6>
             <p>From: Sep. 2018 – Dec. 2018</p>
-          </div>
+          </header>
           <p>
             My duties all stemmed from the day to day operations of
             Intrahealth's Profile aEMR (ambulatory Electronic Medical Records)
-            system. It was a great experience seeing the operations side of a
-            system that has gone into production. Many meetings later and I can
-            say it was truly a great experience.
+            system. Tasks included writing scripts, creating queries to find
+            specific patient data, attending many meetings concerning support of
+            current users and implementation of the system at new sites.
           </p>
         </Col>
       </Row>

@@ -24,6 +24,7 @@ const Banner = () => {
       style={{
         position: "relative",
         textAlign: "center",
+        padding: "0",
       }}
     >
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />

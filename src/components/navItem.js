@@ -9,7 +9,7 @@ const NavItem = ({ children }) => {
         margin: "0.5rem",
         border: "thin solid black",
         borderRadius: "2",
-        opacity: "0.8",
+        opacity: "0.85",
         backgroundColor: "var(--dark-slate-gray)",
         color: "whitesmoke",
       }}
