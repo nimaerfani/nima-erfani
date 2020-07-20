@@ -1,13 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import SocialLinks from "./social-links"
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "macbook-flower.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(quality: 90, maxWidth: 1600) {
             ...GatsbyImageSharpFluid
           }
           original {
@@ -25,26 +26,20 @@ const Banner = () => {
         position: "relative",
         textAlign: "center",
         padding: "0",
+        overflow: "hidden",
       }}
     >
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-      {/* <div style={{ position: "absolute", top: "5%", right: "5%" }}>
-        <input type="button" value="Contact Me" className="navButton" />
-      </div> */}
       <div
         style={{
           position: "absolute",
-          top: "50%",
-          display: "flex",
+          top: "44%",
           width: "100%",
-          height: "50%",
-          justifyContent: "center",
+          margin: "0",
         }}
       >
-        <div>
-          <h4>Nima Erfani</h4>
-          <h5>Hello World :)</h5>
-        </div>
+        <h1>Nima Erfani</h1>
+        <SocialLinks />
       </div>
     </div>
   )

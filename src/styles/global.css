@@ -6,8 +6,9 @@
   --light-slate-gray: #969698;
 }
 
-#___gatsby > div > div {
-  padding: 2rem;
+svg {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
 }
 
 /* 

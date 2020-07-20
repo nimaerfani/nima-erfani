@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <Container>
       <h4>Experience</h4>
-      <Row className="text-justify">
+      <Row>
         <Col xs={12} lg={5}>
           <header className="d-inline-block mt-2">
             <h6>
@@ -13,7 +13,7 @@ const Experience = () => {
               <br />
               Stemcell Technologies
             </h6>
-            <p>From: Sep. 2017 – Apr. 2018</p>
+            <p>Sep. 2017 – Apr. 2018</p>
           </header>
           <p>
             During my time at Stemcell, I worked with the development team to
@@ -30,7 +30,7 @@ const Experience = () => {
               <br />
               Fraser Health Authority
             </h6>
-            <p>From: Sep. 2018 – Dec. 2018</p>
+            <p>Sep. 2018 – Dec. 2018</p>
           </header>
           <p>
             My duties all stemmed from the day to day operations of

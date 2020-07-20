@@ -25,8 +25,8 @@ class Nav extends React.Component {
         style={{
           position: "fixed",
           zIndex: "100",
-          right: "2rem",
-          top: "2rem",
+          right: "1.3rem",
+          top: "1.3rem",
           textAlign: "center",
           width: "fit-content",
           padding: "0",

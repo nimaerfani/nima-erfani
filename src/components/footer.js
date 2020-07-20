@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import SocialLinks from "./social-links"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -21,20 +22,10 @@ const Footer = () => {
           opacity: "0.9",
         }}
       >
-        <div>
-          <div className="d-inline-block p-4">
-            <i class="fab fa-google fa-3x"></i>
-          </div>
-          <div className="d-inline-block p-4">
-            <i class="fab fa-facebook-f fa-3x"></i>
-          </div>
-          <div className="d-inline-block p-4">
-            <i class="fab fa-linkedin-in fa-3x"></i>
-          </div>
-          <div className="d-inline-flex justify-content-center align-items-center p-4">
-            <div className="d-inline-block">
-              <i class="fas fa-file-pdf fa-3x"></i>
-            </div>
+        <SocialLinks />
+        <div className="d-inline-flex justify-content-center align-items-center p-4">
+          <div className="d-inline-block" style={{ fontSize: "2rem" }}>
+            <i class="fas fa-file-pdf"></i>
           </div>
         </div>
       </div>

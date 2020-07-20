@@ -1,25 +1,33 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const Education = () => {
-  const courses = [
-    "Software development methods",
-    "Computer architecture",
-    "Human-computer interaction",
-    "Software architecture and design",
-    "Algorithms and data structures",
-    "Fundamentals of programming",
-    "Communication networks",
-    "Operating systems",
-    "Database systems",
-    "Security engineering",
-    "Design and analysis of real-time systems",
-    "Software testing",
-    "Embedded systems",
-    "Software systems scalability",
+  let courses = [
+    { "Software development methods": "SENG 265" },
+    { "Computer architecture": "CSC 230" },
+    { "Human-computer interaction": "SENG 310" },
+    { "Software architecture and design": "SENG 299" },
+    { "Algorithms and data structures": "CSC 225" },
+    { "Fundamentals of programming": "CSC 111" },
+    { "Communication networks": "CENG 460" },
+    { "Operating systems": "CSC 360" },
+    { "Database systems": "CSC 370" },
+    { "Security engineering": "SENG 360" },
+    { "Real-time systems": "CSC 460" },
+    { "Software testing": "SENG 275" },
+    { "Embedded systems": "SENG 440" },
+    { "Software systems scalability": "SENG 468" },
   ]
+
+  courses = courses.sort((a, b) => {
+    let [_a, _b] = [
+      JSON.stringify(a).split(":")[1].split(" ")[1],
+      JSON.stringify(b).split(":")[1].split(" ")[1],
+    ]
+    if (_a > _b) return 1
+    if (_a < _b) return -1
+    return 0
+  })
 
   return (
     <Container>
@@ -29,7 +37,7 @@ const Education = () => {
           <b>Bachelor of Software Engineering</b>
           <br />
           <b>University of Victoria, Grad. 2020</b>
-          <p className="text-justify">
+          <p>
             I graduated UVic in summer of 2020 with a Bachelor of Software
             Engineering degree. Throughout my time at Uvic, I've had a broad
             range of experiences in software, working with different languages,
@@ -48,9 +56,14 @@ const Education = () => {
         <Col xs={12} lg={5}>
           <b>Courses I've completed...</b>
           <ul>
-            {courses.map((value, index) => {
-              return <li>{value}</li>
-            })}
+            {courses.map((value, index) => (
+              <li>
+                {JSON.stringify(value)
+                  .replace(/"/g, " ")
+                  .replace(/{/g, "")
+                  .replace(/}/g, "")}
+              </li>
+            ))}
           </ul>
         </Col>
       </Row>
