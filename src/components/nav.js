@@ -1,73 +1,93 @@
-import React from "react"
-import NavItem from "./navItem"
+import React, { useState } from "react"
 import { Button } from "react-bootstrap"
+import { CSSTransition } from "react-transition-group"
+import { Link } from "gatsby"
 
-class Nav extends React.Component {
-  state = {
-    navVisible: true,
-  }
-
-  setNavVisible = () => {
-    this.state.navVisible
-      ? this.setState({ navVisible: false })
-      : this.setState({ navVisible: true })
-  }
-
-  render() {
-    const navItems = [
-      "Education",
-      "Technical Profile",
-      "Experience",
-      "Projects",
-    ].map((value, index) => <NavItem>{value}</NavItem>)
-    return (
+const NavItem = ({ children, bgColor }) => {
+  return (
+    <Link to={`#${children}`}>
       <div
+        className="mx-0"
         style={{
-          position: "fixed",
-          zIndex: "100",
-          right: "1.3rem",
-          top: "1.3rem",
-          textAlign: "center",
-          width: "fit-content",
-          padding: "0",
+          padding: "1rem",
+          margin: "0.5rem",
+          borderRadius: "2",
+          color: "whitesmoke",
+          backgroundColor: bgColor,
+          border: "solid 1px white",
         }}
       >
-        <div className="d-none d-lg-block">{navItems}</div>
-        <div className="d-xs-block d-lg-none text-right">
+        {children}
+      </div>
+    </Link>
+  )
+}
+
+const Nav = props => {
+  const [navVisible, setNavVisible] = useState(false)
+  const navItems = [
+    "Education",
+    "Technical Profile",
+    "Experience",
+    "Projects",
+  ].map((value, index) => (
+    <NavItem
+      key={index}
+      setSection={props.setSection}
+      bgColor={
+        value === props.section
+          ? "var(--less-dark-slate-gray)"
+          : "var(--dark-slate-gray)"
+      }
+    >
+      {value}
+    </NavItem>
+  ))
+  return (
+    <div
+      style={{
+        position: "fixed",
+        zIndex: "100",
+        right: "1.3rem",
+        top: "1.3rem",
+        textAlign: "center",
+        width: "fit-content",
+        padding: "0",
+      }}
+    >
+      <div className="d-none d-lg-block">{navItems}</div>
+      <div className="d-xs-block d-lg-none text-right">
+        <CSSTransition
+          in={navVisible}
+          classNames="menu"
+          timeout={300}
+          unmountOnExit
+        >
           <div>
-            <Button
-              onClick={this.setNavVisible}
-              variant="outline"
-              style={{
-                display: this.state.navVisible ? "none" : "inline-block",
-              }}
-            >
+            <Button onClick={() => setNavVisible(!navItems)} variant="outline">
               <i className="far fa-window-close"></i>
             </Button>
-          </div>
-          <div
-            style={{
-              display: this.state.navVisible ? "none" : "block",
-              textAlign: "center",
-            }}
-          >
             {navItems}
           </div>
+        </CSSTransition>
+        <CSSTransition
+          in={!navVisible}
+          classNames="menubars"
+          timeout={300}
+          unmountOnExit
+        >
           <div>
             <Button
-              onClick={this.setNavVisible}
+              onClick={() => setNavVisible(!navVisible)}
               variant="outline"
-              style={{
-                display: this.state.navVisible ? "block" : "none",
-              }}
             >
               <i className="fas fa-bars"></i>
             </Button>
           </div>
-        </div>
+        </CSSTransition>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Nav

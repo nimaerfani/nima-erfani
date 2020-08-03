@@ -1,47 +1,47 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import { Link } from "gatsby"
 
 const Experience = () => {
   return (
-    <Container>
-      <h4>Experience</h4>
-      <Row>
-        <Col xs={12} lg={5}>
-          <header className="d-inline-block mt-2">
-            <h6>
-              Software Developer Co-op
-              <br />
-              Stemcell Technologies
-            </h6>
-            <p>Sep. 2017 – Apr. 2018</p>
-          </header>
-          <p>
-            During my time at Stemcell, I worked with the development team to
-            create a web application used by the shipping department to place
-            shipping orders with FedEx through FedEx web services. This project
-            was challenging yet rewarding, and I am thankful for having had the
-            chance to complete it. Please see <b>HERE</b> for project details.
-          </p>
-        </Col>
-        <Col xs={12} lg={5}>
-          <header className="d-inline-block mt-2">
-            <h6>
+    <section>
+      <Container id="Experience">
+        <h2>Experience</h2>
+        <Row>
+          <Col xs={12} lg={5}>
+            <h3>
               Business Systems Analyst
               <br />
               Fraser Health Authority
-            </h6>
+            </h3>
             <p>Sep. 2018 – Dec. 2018</p>
-          </header>
-          <p>
-            My duties all stemmed from the day to day operations of
-            Intrahealth's Profile aEMR (ambulatory Electronic Medical Records)
-            system. Tasks included writing scripts, creating queries to find
-            specific patient data, attending many meetings concerning support of
-            current users and implementation of the system at new sites.
-          </p>
-        </Col>
-      </Row>
-    </Container>
+            <p>
+              My duties all stemmed from the day-to-day operation of
+              Intrahealth's Profile aEMR (ambulatory Electronic Medical Records)
+              system. Tasks included writing scripts, creating queries to find
+              specific patient data, attending numerous meetings concerning
+              support of current users and implementation of the system at new
+              clinics.
+            </p>
+          </Col>
+          <Col xs={12} lg={5}>
+            <h3>
+              Software Developer Co-op
+              <br />
+              Stemcell Technologies
+            </h3>
+            <p>Sep. 2017 – Apr. 2018</p>
+            <p>
+              During my time at Stemcell, I worked with the development team to
+              create a web application used by the shipping department to place
+              shipping orders with FedEx through FedEx Web Services.{" "}
+              <Link to="#fedexProject">Click here</Link> for technical details
+              about the project.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   )
 }
 

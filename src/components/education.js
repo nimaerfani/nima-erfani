@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
-const Education = () => {
+const Education = props => {
   let courses = [
     { "Software development methods": "SENG 265" },
     { "Computer architecture": "CSC 230" },
@@ -17,6 +17,7 @@ const Education = () => {
     { "Software testing": "SENG 275" },
     { "Embedded systems": "SENG 440" },
     { "Software systems scalability": "SENG 468" },
+    { "Requirements Engineering": "SENG 321" },
   ]
 
   courses = courses.sort((a, b) => {
@@ -30,44 +31,49 @@ const Education = () => {
   })
 
   return (
-    <Container>
-      <Row className="d-flex align-items-lg-center">
-        <Col xs={12} lg={5}>
-          <h4>Education</h4>
-          <b>Bachelor of Software Engineering</b>
-          <br />
-          <b>University of Victoria, Grad. 2020</b>
-          <p>
-            I graduated UVic in summer of 2020 with a Bachelor of Software
-            Engineering degree. Throughout my time at Uvic, I've had a broad
-            range of experiences in software, working with different languages,
-            systems, tools and people. I used low level languages like C, and
-            high level languages like Python. I learned about different tools
-            used by developers in the real world, like Git. Most importantly, I
-            got to experience software in the real world while on co-op. At
-            Stemcell I had the chace to experience every step of the software
-            development lifecycle in developing their department's shipping
-            application. In contrast, I experienced the operations side of an
-            advanced software system in my role at Fraser Health where I was
-            supporting an Electronic Medical Records system. Excited to see
-            where this journey leads!
-          </p>
-        </Col>
-        <Col xs={12} lg={5}>
-          <b>Courses I've completed...</b>
-          <ul>
-            {courses.map((value, index) => (
-              <li>
-                {JSON.stringify(value)
-                  .replace(/"/g, " ")
-                  .replace(/{/g, "")
-                  .replace(/}/g, "")}
-              </li>
-            ))}
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <section>
+      <Container id="Education">
+        <h2>Education</h2>
+        <Row className="d-flex align-items-end">
+          <Col xs={12} lg={5}>
+            <h3>
+              Bachelor of Software Engineering
+              <br />
+              University of Victoria, Grad. 2020
+            </h3>
+            <p>
+              I graduated from UVic in summer of 2020 with a Bachelor of
+              Software Engineering degree. Throughout my time at UVic, I've had
+              a broad range of experiences in software, working with different
+              languages, systems, tools and people. I used low-level languages
+              like C, and high-level languages like Python. I learned about
+              different tools used by developers in the real world, like Git.
+              Most importantly, I got to experience software in the real world
+              while on co-op. At Stemcell I had the chace to experience every
+              step of the software development lifecycle in developing their
+              department's shipping application. In contrast, I experienced the
+              operations side of an advanced software system in my role at
+              Fraser Health where I was supporting an Electronic Medical Records
+              system. Excited to see where this journey leads!
+            </p>
+          </Col>
+          <Col xs={12} lg={5}>
+            <p>Courses I've completed include...</p>
+            <ul>
+              {courses.map((value, index) => (
+                <li key={index}>
+                  {JSON.stringify(value)
+                    .replace(/"/g, " ")
+                    .replace(/{/g, "")
+                    .replace(/}/g, "")
+                    .replace(/:/g, "–")}
+                </li>
+              ))}
+            </ul>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   )
 }
 

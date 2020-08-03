@@ -2,13 +2,14 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SocialLinks from "./social-links"
+import { isMobileOnly } from "react-device-detect"
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "macbook-flower.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 1600) {
+          fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
           original {
@@ -22,11 +23,11 @@ const Banner = () => {
 
   return (
     <div
+      id="Banner"
       style={{
         position: "relative",
         textAlign: "center",
         padding: "0",
-        overflow: "hidden",
       }}
     >
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
@@ -40,6 +41,17 @@ const Banner = () => {
       >
         <h1>Nima Erfani</h1>
         <SocialLinks />
+        {!isMobileOnly && (
+          <div
+            style={{
+              fontSize: "1.2rem",
+              marginTop: ".6rem",
+              fontFamily: "Menlo",
+            }}
+          >
+            "Hello, World!"
+          </div>
+        )}
       </div>
     </div>
   )

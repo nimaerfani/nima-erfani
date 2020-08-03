@@ -3,14 +3,14 @@ import { Container, Badge, Row, Col } from "react-bootstrap"
 
 const SkillBadge = props => {
   return (
-    <Badge pill variant={props.variant} className="p-3 m-2">
+    <Badge pill className="p-3 m-2 bg-dark" style={{ color: "#fff2cc" }}>
       {props.children}
     </Badge>
   )
 }
 
 const Skills = () => {
-  const Languages = ["JavaScript", "HTML/CSS", "SQL", "Python", "C", "Java"]
+  const Languages = ["JavaScript", "HTML & CSS", "Python", "C", "SQL"]
   const Tools = [
     "Git",
     "React",
@@ -20,32 +20,38 @@ const Skills = () => {
     "Gatsby",
     "Express",
     "Outsystems platform",
-    "Firebase*",
-    "Microsoft Office**",
+    "Firebase",
+    "Microsoft Office",
     "Visual Studio Code",
   ]
   return (
-    <Container>
-      <Row>
-        <Col xs={12} lg={10}>
-          <h4>Technical Profile</h4>
-          <p>
-            In the course of my studies, co-ops and independent projects, I've
-            worked with or am actively working with the following languages and
-            tools.
-          </p>
-          <div style={{ fontSize: "1.5rem", textAlign: "center" }}>
-            {Languages.map((value, index) => (
-              <SkillBadge variant="primary">{value}</SkillBadge>
-            ))}
-            <br />
-            {Tools.map((value, index) => (
-              <SkillBadge variant="secondary">{value}</SkillBadge>
-            ))}
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <span
+      style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
+    >
+      <section>
+        <Container id="Technical Profile">
+          <Row>
+            <Col xs={12} lg={10}>
+              <h2>Technical Profile</h2>
+              <p>
+                In the course of my studies, co-ops and independent projects,
+                I've worked with, or am actively working with the following
+                languages and tools:
+              </p>
+              <div style={{ fontSize: "1.5rem", textAlign: "center" }}>
+                {Languages.map((value, index) => (
+                  <SkillBadge bgColor="var(--dark-green)">{value}</SkillBadge>
+                ))}
+                <hr />
+                {Tools.map((value, index) => (
+                  <SkillBadge bgColor="var(--light-green)">{value}</SkillBadge>
+                ))}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </span>
   )
 }
 

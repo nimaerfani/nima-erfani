@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import Image from "gatsby-image"
 import SocialLinks from "./social-links"
+import { Container, Row, Col } from "react-bootstrap"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -10,24 +12,79 @@ const Footer = () => {
         id
         publicURL
       }
+      myPic: file(relativePath: { eq: "nima2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   return (
     <footer>
       <div
-        className="text-center pb-4"
+        id="Footer"
+        className="pb-4 pt-4"
         style={{
           backgroundColor: "var(--dark-slate-gray)",
           color: "white",
-          opacity: "0.9",
         }}
       >
-        <SocialLinks />
-        <div className="d-inline-flex justify-content-center align-items-center p-4">
-          <div className="d-inline-block" style={{ fontSize: "2rem" }}>
-            <i class="fas fa-file-pdf"></i>
-          </div>
-        </div>
+        <Container fluid>
+          <Row className="justify-content-center">
+            <Col
+              className="px-4 text-center"
+              xs={12}
+              sm={7}
+              lg={4}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <SocialLinks />
+              <br />
+              <h3>Thank you for visiting!</h3>
+
+              <p>
+                If you have any questions or would like references, feel
+                encouraged to contact me any way most convenient for you.
+              </p>
+
+              <p>
+                To view a PDF version of this page, go{" "}
+                <a
+                  href={data.resume.publicURL}
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  here
+                </a>
+                .
+              </p>
+
+              <p>
+                Have suggestions or a need to to troll me? You're still welcome
+                to contact me.
+              </p>
+            </Col>
+            <Col
+              xs={12}
+              sm={5}
+              lg={4}
+              className="d-flex align-items-center justify-content-center px-4"
+            >
+              <div style={{ width: "100%" }}>
+                <Image
+                  fluid={data.myPic.childImageSharp.fluid}
+                  className="img-thumbnail"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </footer>
   )
