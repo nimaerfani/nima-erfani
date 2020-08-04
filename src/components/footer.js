@@ -12,7 +12,7 @@ const Footer = () => {
         id
         publicURL
       }
-      myPic: file(relativePath: { eq: "nima2.jpg" }) {
+      myPic: file(relativePath: { eq: "nima.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid

@@ -1,10 +1,14 @@
 import React from "react"
 import { Container, Badge, Row, Col } from "react-bootstrap"
 
-const SkillBadge = props => {
+const SkillBadge = ({ children }) => {
   return (
-    <Badge pill className="p-3 m-2 bg-dark" style={{ color: "#fff2cc" }}>
-      {props.children}
+    <Badge
+      pill
+      className="p-3 m-2 bg-dark"
+      style={{ color: "var(--light-yellow)" }}
+    >
+      {children}
     </Badge>
   )
 }
@@ -23,7 +27,9 @@ const Skills = () => {
     "Firebase",
     "Microsoft Office",
     "Visual Studio Code",
+    "RegEx",
   ]
+
   return (
     <span
       style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
@@ -40,11 +46,11 @@ const Skills = () => {
               </p>
               <div style={{ fontSize: "1.5rem", textAlign: "center" }}>
                 {Languages.map((value, index) => (
-                  <SkillBadge bgColor="var(--dark-green)">{value}</SkillBadge>
+                  <SkillBadge>{value}</SkillBadge>
                 ))}
                 <hr />
                 {Tools.map((value, index) => (
-                  <SkillBadge bgColor="var(--light-green)">{value}</SkillBadge>
+                  <SkillBadge>{value}</SkillBadge>
                 ))}
               </div>
             </Col>

@@ -1,42 +1,62 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import SocialLinks from "./social-links"
+import { isMobileOnly } from "react-device-detect"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "macbookflower.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+          original {
+            height
+            width
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <header>
+      <div
+        id="Banner"
+        style={{
+          position: "relative",
+          textAlign: "center",
+          padding: "0",
+        }}
+      >
+        <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+        <div
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            position: "absolute",
+            top: "44%",
+            width: "100%",
+            margin: "0",
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+          <h1>Nima Erfani</h1>
+          <SocialLinks />
+          {!isMobileOnly && (
+            <div
+              style={{
+                fontSize: "1.2rem",
+                marginTop: ".6rem",
+                fontFamily: "Menlo",
+              }}
+            >
+              "Hello, World!"
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header

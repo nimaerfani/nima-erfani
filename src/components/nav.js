@@ -36,7 +36,7 @@ const Nav = props => {
       setSection={props.setSection}
       bgColor={
         value === props.section
-          ? "var(--less-dark-slate-gray)"
+          ? "var(--dark-purple)"
           : "var(--dark-slate-gray)"
       }
     >
@@ -44,49 +44,54 @@ const Nav = props => {
     </NavItem>
   ))
   return (
-    <div
-      style={{
-        position: "fixed",
-        zIndex: "100",
-        right: "1.3rem",
-        top: "1.3rem",
-        textAlign: "center",
-        width: "fit-content",
-        padding: "0",
-      }}
-    >
-      <div className="d-none d-lg-block">{navItems}</div>
-      <div className="d-xs-block d-lg-none text-right">
-        <CSSTransition
-          in={navVisible}
-          classNames="menu"
-          timeout={300}
-          unmountOnExit
-        >
-          <div>
-            <Button onClick={() => setNavVisible(!navItems)} variant="outline">
-              <i className="far fa-window-close"></i>
-            </Button>
-            {navItems}
-          </div>
-        </CSSTransition>
-        <CSSTransition
-          in={!navVisible}
-          classNames="menubars"
-          timeout={300}
-          unmountOnExit
-        >
-          <div>
-            <Button
-              onClick={() => setNavVisible(!navVisible)}
-              variant="outline"
-            >
-              <i className="fas fa-bars"></i>
-            </Button>
-          </div>
-        </CSSTransition>
+    <nav>
+      <div
+        style={{
+          position: "fixed",
+          zIndex: "100",
+          right: "1.3rem",
+          top: "1.3rem",
+          textAlign: "center",
+          width: "fit-content",
+          padding: "0",
+        }}
+      >
+        <div className="d-none d-lg-block">{navItems}</div>
+        <div className="d-xs-block d-lg-none text-right">
+          <CSSTransition
+            in={navVisible}
+            classNames="menu"
+            timeout={300}
+            unmountOnExit
+          >
+            <div>
+              <Button
+                onClick={() => setNavVisible(!navItems)}
+                variant="outline"
+              >
+                <i className="far fa-window-close"></i>
+              </Button>
+              {navItems}
+            </div>
+          </CSSTransition>
+          <CSSTransition
+            in={!navVisible}
+            classNames="menubars"
+            timeout={300}
+            unmountOnExit
+          >
+            <div>
+              <Button
+                onClick={() => setNavVisible(!navVisible)}
+                variant="outline"
+              >
+                <i className="fas fa-bars"></i>
+              </Button>
+            </div>
+          </CSSTransition>
+        </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

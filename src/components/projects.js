@@ -33,7 +33,11 @@ const Projects = () => {
                 <p>
                   I used Gatsby with Bootstrap and React Bootstrap for creating
                   this online resume. You can view the source code on my{" "}
-                  <a href="https://github.com/nimaerfani/nima-erfani">
+                  <a
+                    href="https://github.com/nimaerfani/nima-erfani"
+                    target="blank"
+                    rel="noreferrer noopener"
+                  >
                     Github repo
                   </a>
                   .

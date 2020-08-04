@@ -16,11 +16,11 @@ const MySocialLink = props => {
         className={isMobile ? "noFocus" : "hoverLight"}
         onMouseEnter={() => {
           if (isMobile) return
-          setShow(!show)
+          else setShow(!show)
         }}
         onMouseLeave={() => {
           if (isMobile) return
-          setShow(!show)
+          else setShow(!show)
         }}
         ref={target}
         style={{ color: "#5c5c8a" }}
@@ -34,11 +34,8 @@ const MySocialLink = props => {
 const SocialLinks = () => {
   return (
     <span style={{ fontSize: "2rem" }}>
-      <MySocialLink
-        message="Find me on FaceBook (must be logged in)"
-        URL="https://www.facebook.com/nima.erfani.3"
-      >
-        <i className="fab fa-facebook-f low-margin"></i>
+      <MySocialLink message="Contact me @uvic.ca" URL="mailto:erfani@uvic.ca">
+        <i className="fas fa-envelope low-margin"></i>
       </MySocialLink>
       <MySocialLink
         message="Find me on LinkedIn"
@@ -46,8 +43,11 @@ const SocialLinks = () => {
       >
         <i className="fab fa-linkedin-in low-margin"></i>
       </MySocialLink>
-      <MySocialLink message="Contact me @uvic.ca" URL="mailto:erfani@uvic.ca">
-        <i className="fas fa-envelope low-margin"></i>
+      <MySocialLink
+        message="Find me on Facebook (must be logged in)"
+        URL="https://www.facebook.com/nima.erfani.3"
+      >
+        <i className="fab fa-facebook-f low-margin"></i>
       </MySocialLink>
     </span>
   )

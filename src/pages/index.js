@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import ScrollTracker from "../components/scroll-tracker"
-import Banner from "../components/banner"
+import Header from "../components/header"
 import Nav from "../components/nav"
 import SEO from "../components/seo"
 import Education from "../components/education"
@@ -17,7 +17,7 @@ const IndexPage = () => {
     <>
       <SEO title="Welcome!" />
       <ScrollTracker section={section} setSection={setSection}>
-        <Banner />
+        <Header />
         <Nav section={section} setSection={setSection} />
         <Education />
         <Skills />

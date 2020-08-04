@@ -1,10 +1,8 @@
 :root {
-  --light-gray: #d4cccf;
-  --dark-gray: #b4acaf;
+  --light-yellow: #fff2cc;
   --dark-slate-gray: #0c0c0d;
-  --less-dark-slate-gray: #41417e;
+  --dark-purple: #41417e;
   --light-steel-blue: #f0f0f1;
-  --light-slate-gray: #969698;
   scroll-behavior: smooth;
 }
 
