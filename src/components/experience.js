@@ -10,7 +10,7 @@ const Experience = () => {
         <Row>
           <Col xs={12} lg={5}>
             <h3>
-              Business Systems Analyst
+              Business Systems Analyst Co-op
               <br />
               Fraser Health Authority
             </h3>
