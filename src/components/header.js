@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SocialLinks from "./social-links"
@@ -21,21 +21,6 @@ const Header = () => {
     }
   `)
 
-  const HelloWorld = useRef(null)
-  if (!isMobileOnly) {
-    HelloWorld.current = (
-      <div
-        style={{
-          fontSize: "1.2rem",
-          marginTop: ".6rem",
-          fontFamily: "Menlo",
-        }}
-      >
-        "Hello, World!"
-      </div>
-    )
-  }
-
   return (
     <header>
       <div
@@ -57,7 +42,17 @@ const Header = () => {
         >
           <h1>Nima Erfani</h1>
           <SocialLinks />
-          {HelloWorld.current}
+          {!isMobileOnly && (
+            <div
+              style={{
+                fontSize: "1.2rem",
+                marginTop: ".6rem",
+                fontFamily: "Menlo",
+              }}
+            >
+              "Hello, World!"
+            </div>
+          )}
         </div>
       </div>
     </header>
