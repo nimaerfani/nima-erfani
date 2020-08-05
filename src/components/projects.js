@@ -3,10 +3,10 @@ import { Container, Row, Col } from "react-bootstrap"
 
 const Projects = () => {
   return (
-    <span
-      style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
-    >
-      <section>
+    <section>
+      <span
+        style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
+      >
         <Container id="Projects">
           <h2>Projects</h2>
           <Row>
@@ -95,8 +95,8 @@ const Projects = () => {
             </Col>
           </Row>
         </Container>
-      </section>
-    </span>
+      </span>
+    </section>
   )
 }
 

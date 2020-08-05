@@ -31,10 +31,10 @@ const Skills = () => {
   ]
 
   return (
-    <span
-      style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
-    >
-      <section>
+    <section>
+      <span
+        style={{ display: "block", backgroundColor: "var(--light-steel-blue)" }}
+      >
         <Container id="Technical Profile">
           <Row>
             <Col xs={12} lg={10}>
@@ -56,8 +56,8 @@ const Skills = () => {
             </Col>
           </Row>
         </Container>
-      </section>
-    </span>
+      </span>
+    </section>
   )
 }
 

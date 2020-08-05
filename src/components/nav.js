@@ -11,7 +11,6 @@ const NavItem = ({ children, bgColor }) => {
         style={{
           padding: "1rem",
           margin: "0.5rem",
-          borderRadius: "2",
           color: "whitesmoke",
           backgroundColor: bgColor,
           border: "solid 1px white",
