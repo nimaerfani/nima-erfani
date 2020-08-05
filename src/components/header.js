@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SocialLinks from "./social-links"
-import { isMobileOnly } from "react-device-detect"
+import { BrowserView } from "react-device-detect"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -42,7 +42,7 @@ const Header = () => {
         >
           <h1>Nima Erfani</h1>
           <SocialLinks />
-          {!isMobileOnly && (
+          <BrowserView>
             <div
               style={{
                 fontSize: "1.2rem",
@@ -52,7 +52,7 @@ const Header = () => {
             >
               "Hello, World!"
             </div>
-          )}
+          </BrowserView>
         </div>
       </div>
     </header>
