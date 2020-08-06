@@ -30,6 +30,16 @@ const Header = () => {
           padding: "0",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            top: "0.7rem",
+            zIndex: 1,
+            width: "100%",
+          }}
+        >
+          <p style={{ fontFamily: "Menlo" }}>"Hello, World!"</p>
+        </div>
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         <div
           style={{

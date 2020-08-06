@@ -47,7 +47,7 @@ const Nav = props => {
       <div
         style={{
           position: "fixed",
-          zIndex: "4000",
+          zIndex: 2,
           right: "1.3rem",
           top: "1.3rem",
           textAlign: "center",
@@ -56,14 +56,17 @@ const Nav = props => {
         }}
       >
         <div className="d-none d-lg-block">{navItems}</div>
-        <div className="d-xs-block d-lg-none text-right">
+        <div
+          className="d-xs-block d-lg-none text-right"
+          style={{ position: "fixed" }}
+        >
           <CSSTransition
             in={navVisible}
             classNames="menu"
             timeout={300}
             unmountOnExit
           >
-            <div>
+            <div style={{ position: "fixed", right: "1.3rem", top: "1.3rem" }}>
               <Button
                 onClick={() => setNavVisible(!navItems)}
                 variant="outline"
@@ -79,7 +82,7 @@ const Nav = props => {
             timeout={300}
             unmountOnExit
           >
-            <div>
+            <div style={{ position: "fixed", right: "1.3rem", top: "1.3rem" }}>
               <Button
                 onClick={() => setNavVisible(!navVisible)}
                 variant="outline"
