@@ -47,7 +47,7 @@ const Nav = props => {
       <div
         style={{
           position: "fixed",
-          zIndex: "100",
+          zIndex: "4000",
           right: "1.3rem",
           top: "1.3rem",
           textAlign: "center",
