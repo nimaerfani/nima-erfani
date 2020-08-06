@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SocialLinks from "./social-links"
-import { BrowserView } from "react-device-detect"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -31,6 +30,16 @@ const Header = () => {
           padding: "0",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 3002,
+            marginTop: "0.8rem",
+            width: "100%",
+          }}
+        >
+          <p style={{ fontFamily: "Menlo" }}>"Hello, World!"</p>
+        </div>
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         <div
           style={{
@@ -42,17 +51,6 @@ const Header = () => {
         >
           <h1>Nima Erfani</h1>
           <SocialLinks />
-          <BrowserView>
-            <div
-              style={{
-                fontSize: "1.2rem",
-                marginTop: ".6rem",
-                fontFamily: "Menlo",
-              }}
-            >
-              "Hello, World!"
-            </div>
-          </BrowserView>
         </div>
       </div>
     </header>

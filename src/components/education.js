@@ -3,32 +3,22 @@ import { Container, Row, Col } from "react-bootstrap"
 
 const Education = props => {
   let courses = [
-    { "Software development methods": "SENG 265" },
-    { "Computer architecture": "CSC 230" },
-    { "Human-computer interaction": "SENG 310" },
-    { "Software architecture and design": "SENG 299" },
-    { "Algorithms and data structures": "CSC 225" },
-    { "Fundamentals of programming": "CSC 111" },
-    { "Communication networks": "CENG 460" },
-    { "Operating systems": "CSC 360" },
-    { "Database systems": "CSC 370" },
-    { "Security engineering": "SENG 360" },
-    { "Real-time systems": "CSC 460" },
-    { "Software testing": "SENG 275" },
-    { "Embedded systems": "SENG 440" },
-    { "Software systems scalability": "SENG 468" },
-    { "Requirements Engineering": "SENG 321" },
+    "Fundamentals of programming – CSC 111",
+    "Algorithms and data structures – CSC 225",
+    "Computer architecture – CSC 230",
+    "Software development methods – SENG 265",
+    "Software testing – SENG 275",
+    "Software architecture and design – SENG 299",
+    "Human-computer interaction – SENG 310",
+    "Requirements Engineering – SENG 321",
+    "Operating systems – CSC 360",
+    "Security engineering – SENG 360",
+    "Database systems – CSC 370",
+    "Embedded systems – SENG 440",
+    "Communication networks – CENG 460",
+    "Real-time systems – CSC 460",
+    "Software systems scalability – SENG 468",
   ]
-
-  courses = courses.sort((a, b) => {
-    let [_a, _b] = [
-      JSON.stringify(a).split(":")[1].split(" ")[1],
-      JSON.stringify(b).split(":")[1].split(" ")[1],
-    ]
-    if (_a > _b) return 1
-    if (_a < _b) return -1
-    return 0
-  })
 
   return (
     <section>
@@ -61,13 +51,7 @@ const Education = props => {
             <p>Courses I've completed include...</p>
             <ul>
               {courses.map((value, index) => (
-                <li key={index}>
-                  {JSON.stringify(value)
-                    .replace(/"/g, " ")
-                    .replace(/{/g, "")
-                    .replace(/}/g, "")
-                    .replace(/:/g, "–")}
-                </li>
+                <li key={index}>{value}</li>
               ))}
             </ul>
           </Col>
