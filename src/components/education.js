@@ -49,11 +49,19 @@ const Education = props => {
           </Col>
           <Col xs={12} lg={5}>
             <p>Courses I've completed include...</p>
-            <ul>
-              {courses.map((value, index) => (
-                <li key={index}>{value}</li>
-              ))}
-            </ul>
+            {courses.map((value, index) => (
+              <div className="d-flex ml-4">
+                <div className="d-inline-block">
+                  <i
+                    class="fas fa-book-reader"
+                    style={{ marginRight: "1rem" }}
+                  />
+                </div>
+                <div style={{ display: "inline-block", maxWidth: "90%" }}>
+                  {value}
+                </div>
+              </div>
+            ))}
           </Col>
         </Row>
       </Container>

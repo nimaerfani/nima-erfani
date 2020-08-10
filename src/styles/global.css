@@ -22,11 +22,11 @@
 }
 
 section > div {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem !important;
 }
 
 section > span > div {
-  padding: 3rem 2rem;
+  padding: 3rem 2rem !important;
 }
 
 .menu-enter {

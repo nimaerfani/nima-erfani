@@ -4,7 +4,7 @@ const ScrollTracker = ({ children, section, setSection }) => {
   const navItems = [
     "Banner",
     "Education",
-    "Technical Profile",
+    "Skills",
     "Experience",
     "Projects",
     "Footer",

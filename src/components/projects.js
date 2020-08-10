@@ -85,13 +85,6 @@ const Projects = () => {
                   and other useful tools.
                 </p>
               </div>
-              <div>
-                <h3>AES</h3>
-                <p>
-                  I implemented the Advanced Encryption Standard algorithm using
-                  Java for my security engineering course.
-                </p>
-              </div>
             </Col>
           </Row>
         </Container>

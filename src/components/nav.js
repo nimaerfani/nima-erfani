@@ -24,24 +24,21 @@ const NavItem = ({ children, bgColor }) => {
 
 const Nav = props => {
   const [navVisible, setNavVisible] = useState(false)
-  const navItems = [
-    "Education",
-    "Technical Profile",
-    "Experience",
-    "Projects",
-  ].map((value, index) => (
-    <NavItem
-      key={index}
-      setSection={props.setSection}
-      bgColor={
-        value === props.section
-          ? "var(--dark-purple)"
-          : "var(--dark-slate-gray)"
-      }
-    >
-      {value}
-    </NavItem>
-  ))
+  const navItems = ["Education", "Skills", "Experience", "Projects"].map(
+    (value, index) => (
+      <NavItem
+        key={index}
+        setSection={props.setSection}
+        bgColor={
+          value === props.section
+            ? "var(--dark-purple)"
+            : "var(--dark-slate-gray)"
+        }
+      >
+        {value}
+      </NavItem>
+    )
+  )
   return (
     <nav>
       <div
@@ -51,7 +48,7 @@ const Nav = props => {
           right: "1.3rem",
           top: "1.3rem",
           textAlign: "center",
-          width: "fit-content",
+          width: "10rem",
           padding: "0",
         }}
       >
