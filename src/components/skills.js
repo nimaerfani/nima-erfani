@@ -19,7 +19,7 @@ const Skills = () => {
     "Agile development practices",
     "DevOps & Scrum",
     "Requirements gathering & documentation",
-    "Software Testing Techniques",
+    "Software testing techniques",
     "Data visualization",
   ]
 
