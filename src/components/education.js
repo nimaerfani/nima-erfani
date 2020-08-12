@@ -39,11 +39,11 @@ const Education = props => {
               like C, and high-level languages like Python. I learned about
               different tools used by developers in the real world, like Git.
               Most importantly, I got to experience software in the real world
-              while on co-op. At Stemcell I had the chace to experience every
+              while on co-op. At Stemcell I had the chance to experience every
               step of the software development lifecycle in developing their
               department's shipping application. In contrast, I experienced the
               operations side of an advanced software system in my role at
-              Fraser Health where I was supporting an Electronic Medical Records
+              Fraser Health where I was supporting an electronic medical records
               system. Excited to see where this journey leads!
             </p>
           </Col>
